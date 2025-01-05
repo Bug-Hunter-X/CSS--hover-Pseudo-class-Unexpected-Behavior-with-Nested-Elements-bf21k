@@ -1,0 +1,26 @@
+The solution involves using a more appropriate selector to ensure the hover effect works as intended:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.inner {
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+}
+
+.container:hover .inner {
+  background-color: lightgreen; /* This is still not perfect and will only change the inner if it is hovered over.  See the alternative below */ 
+}
+
+/* Correct solution */
+.container:hover > .inner { /* Use the direct child selector (>). This ensures that the effect applies only when hovering over the parent container.*/
+  background-color: lightgreen;
+}
+```
+
+By using the direct child selector (`>`), we explicitly target only the direct children of `.container`, thereby ensuring that the hover effect applies to the `.inner` element regardless of the mouse position within the parent container.
