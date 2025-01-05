@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates a common issue: unexpected behavior when using the `:hover` pseudo-class with nested elements.
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.inner {
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+}
+
+.container:hover .inner {
+  background-color: lightgreen;
+}
+```
+
+The intent is that when the `.container` is hovered, the `.inner` element's background color should change. However, this will only work if the mouse cursor is directly over the `.inner` element, not the `.container` as a whole.
